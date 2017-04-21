@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @move_in_or_out.Equipment %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @move_in_or_out.IP %>
+</p>
+
+<p>
+  <strong>Inorout:</strong>
+  <%= @move_in_or_out.InOrOut %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @move_in_or_out.Date %>
+</p>
+
+<%= link_to 'Edit', edit_move_in_or_out_path(@move_in_or_out) %> |
+<%= link_to 'Back', move_in_or_outs_path %>

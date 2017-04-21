@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Move In Or Outs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Equipment</th>
+      <th>Ip</th>
+      <th>Inorout</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @move_in_or_outs.each do |move_in_or_out| %>
+      <tr>
+        <td><%= move_in_or_out.Equipment %></td>
+        <td><%= move_in_or_out.IP %></td>
+        <td><%= move_in_or_out.InOrOut %></td>
+        <td><%= move_in_or_out.Date %></td>
+        <td><%= link_to 'Show', move_in_or_out %></td>
+        <td><%= link_to 'Edit', edit_move_in_or_out_path(move_in_or_out) %></td>
+        <td><%= link_to 'Destroy', move_in_or_out, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Move In Or Out', new_move_in_or_out_path %>

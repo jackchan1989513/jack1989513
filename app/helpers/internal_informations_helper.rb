@@ -1,0 +1,2 @@
+module InternalInformationsHelper
+end

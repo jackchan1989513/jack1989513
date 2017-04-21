@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+<%= image_tag @access_log.image.url(:medium) %>
+<p>
+  <strong>Dateandcompany:</strong>
+  <%= @access_log.DateAndCompany %>
+</p>
+
+<%= link_to 'Edit', edit_access_log_path(@access_log) %> |
+<%= link_to 'Back', access_logs_path %>

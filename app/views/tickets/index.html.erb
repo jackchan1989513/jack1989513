@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tickets</h1>
+
+<%= form_tag tickets_path, :method => 'get' do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search"%>
+    <% end %>
+
+<table>
+  <thead>
+    <br>
+      <th>Ticket no </th>
+      <th>Company name </th>
+      <th>Customer name </th>
+      <th>Handler </th>
+      <th>Description </th>
+      <th>Response time</th>
+      <th>Status</th>
+      <th colspan="10"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tickets.each do |ticket| %>
+      <tr>
+        <td><%= ticket.TicketNo %></td>
+        <td><%= ticket.CompantName %></td>
+        <td><%= ticket.CustomerName %></td>
+        <td><%= ticket.Hundler %></td>
+        <td><%= ticket.Description %></td>
+        <td><%= ticket.ResponseTime %></td>
+        <td><%= ticket.Status %></td>
+        <td><%= link_to 'Show', ticket %></td>
+        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
+        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ticket', new_ticket_path %>

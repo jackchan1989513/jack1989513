@@ -1,0 +1,2 @@
+class MoveInOrOut < ApplicationRecord
+end

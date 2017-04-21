@@ -1,0 +1,27 @@
+<%= form_for internal_information,html: { :multipart => true } do |f| %>
+  <% if internal_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(internal_information.errors.count, "error") %> prohibited this internal_information from being saved:</h2>
+
+      <ul>
+      <% internal_information.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :video %>
+      <%= f.file_field :video %>
+    </div>
+
+  <div class="field">
+    <%= f.label :Title %>
+    <%= f.text_field :Title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

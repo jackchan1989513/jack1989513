@@ -1,0 +1,37 @@
+<%= form_for(move_in_or_out) do |f| %>
+  <% if move_in_or_out.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(move_in_or_out.errors.count, "error") %> prohibited this move_in_or_out from being saved:</h2>
+
+      <ul>
+      <% move_in_or_out.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Equipment %>
+    <%= f.text_area :Equipment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :IP %>
+    <%= f.text_field :IP %>
+  </div>
+
+  <div class="field">
+    <%= f.label :InOrOut %>
+    <%= f.text_field :InOrOut %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Date %>
+    <%= f.text_field :Date %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

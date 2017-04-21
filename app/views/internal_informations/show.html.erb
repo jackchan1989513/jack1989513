@@ -1,0 +1,14 @@
+<%= javascript_include_tag 'swfobject' %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @internal_information.Title %>
+</p>
+
+<p>
+  <%= video_player({:file => @internal_information.video.url(:medium), :image => @internal_information.video.url(:thumb)}) %>
+</p>
+
+<%= link_to 'Edit', edit_internal_information_path(@internal_information) %> |
+<%= link_to 'Back', internal_informations_path %>
