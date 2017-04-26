@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419114958) do
+ActiveRecord::Schema.define(version: 20170423091215) do
 
   create_table "access_logs", force: :cascade do |t|
     t.string   "DateAndCompany"
@@ -20,6 +20,14 @@ ActiveRecord::Schema.define(version: 20170419114958) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "can_not_move_outs", force: :cascade do |t|
+    t.string   "CompanyName"
+    t.text     "Equipment"
+    t.string   "Reason"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "companies", force: :cascade do |t|
@@ -32,6 +40,24 @@ ActiveRecord::Schema.define(version: 20170419114958) do
     t.string   "Rack"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "customers", force: :cascade do |t|
+    t.string   "CompanyName"
+    t.string   "Name"
+    t.string   "Tel"
+    t.string   "Idno"
+    t.string   "Permission"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "deliveries", force: :cascade do |t|
+    t.string   "Ticketno"
+    t.date     "Date"
+    t.string   "StoreIn"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "internal_informations", force: :cascade do |t|
@@ -51,6 +77,14 @@ ActiveRecord::Schema.define(version: 20170419114958) do
     t.string   "Date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "rack_in_halls", force: :cascade do |t|
+    t.string   "RackNo"
+    t.string   "CompanyName"
+    t.text     "Equipment"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "tickets", force: :cascade do |t|
@@ -82,6 +116,15 @@ ActiveRecord::Schema.define(version: 20170419114958) do
     t.integer  "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vendor_lists", force: :cascade do |t|
+    t.string   "Name"
+    t.string   "Tel"
+    t.string   "WorkTime"
+    t.string   "Type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

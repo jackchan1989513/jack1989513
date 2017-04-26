@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+
+
   validates :Name ,:presence => true
   validates :Authorization ,:presence => true
   validates :Phone, :presence => true

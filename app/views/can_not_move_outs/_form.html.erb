@@ -1,0 +1,32 @@
+<%= form_for(can_not_move_out) do |f| %>
+  <% if can_not_move_out.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(can_not_move_out.errors.count, "error") %> prohibited this can_not_move_out from being saved:</h2>
+
+      <ul>
+      <% can_not_move_out.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :CompanyName %>
+    <%= f.text_field :CompanyName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Equipment %>
+    <%= f.text_area :Equipment %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Reason %>
+    <%= f.text_field :Reason %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

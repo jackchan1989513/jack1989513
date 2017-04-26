@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rack In Halls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rackno</th>
+      <th>Companyname</th>
+      <th>Equipment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rack_in_halls.each do |rack_in_hall| %>
+      <tr>
+        <td><%= rack_in_hall.RackNo %></td>
+        <td><%= rack_in_hall.CompanyName %></td>
+        <td><%= rack_in_hall.Equipment %></td>
+        <td><%= link_to 'Show', rack_in_hall %></td>
+        <td><%= link_to 'Edit', edit_rack_in_hall_path(rack_in_hall) %></td>
+        <td><%= link_to 'Destroy', rack_in_hall, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rack In Hall', new_rack_in_hall_path %>

@@ -1,0 +1,32 @@
+<%= form_for(rack_in_hall) do |f| %>
+  <% if rack_in_hall.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rack_in_hall.errors.count, "error") %> prohibited this rack_in_hall from being saved:</h2>
+
+      <ul>
+      <% rack_in_hall.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :RackNo %>
+    <%= f.text_field :RackNo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :CompanyName %>
+    <%= f.text_field :CompanyName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Equipment %>
+    <%= f.text_area :Equipment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

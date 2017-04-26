@@ -1,5 +1,5 @@
 class Ticket < ApplicationRecord
-  has_many  :user
+
   validates :TicketNo, :presence => true, :length => {:minimum => 6}
   validates :CompantName, :presence => true
   validates :ResponseTime, :presence => true

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vendor Lists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Tel</th>
+      <th>Worktime</th>
+      <th>Type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendor_lists.each do |vendor_list| %>
+      <tr>
+        <td><%= vendor_list.Name %></td>
+        <td><%= vendor_list.Tel %></td>
+        <td><%= vendor_list.WorkTime %></td>
+        <td><%= vendor_list.Type %></td>
+        <td><%= link_to 'Show', vendor_list %></td>
+        <td><%= link_to 'Edit', edit_vendor_list_path(vendor_list) %></td>
+        <td><%= link_to 'Destroy', vendor_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor List', new_vendor_list_path %>

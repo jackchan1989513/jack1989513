@@ -17,13 +17,13 @@
   </div>
 
   <div class="field">
-    <%= f.label :IP %>
+    <%= f.label :Company %>
     <%= f.text_field :IP %>
   </div>
 
   <div class="field">
     <%= f.label :InOrOut %>
-    <%= f.text_field :InOrOut %>
+    <%= f.select :InOrOut ,[['In','In'],['Out','Out']]%>
   </div>
 
   <div class="field">

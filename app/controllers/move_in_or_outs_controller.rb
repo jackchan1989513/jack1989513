@@ -54,12 +54,16 @@ class MoveInOrOutsController < ApplicationController
   # DELETE /move_in_or_outs/1
   # DELETE /move_in_or_outs/1.json
   def destroy
+    unless current_user.admin?
+      redirect_to can_not_move_outs_path, :alert => "Access denied."
+      else
     @move_in_or_out.destroy
     respond_to do |format|
       format.html { redirect_to move_in_or_outs_url, notice: 'Move in or out was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
+    end
+    end
 
   private
     # Use callbacks to share common setup or constraints between actions.

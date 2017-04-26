@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rackno:</strong>
+  <%= @rack_in_hall.RackNo %>
+</p>
+
+<p>
+  <strong>Companyname:</strong>
+  <%= @rack_in_hall.CompanyName %>
+</p>
+
+<p>
+  <strong>Equipment:</strong>
+  <%= @rack_in_hall.Equipment %>
+</p>
+
+<%= link_to 'Edit', edit_rack_in_hall_path(@rack_in_hall) %> |
+<%= link_to 'Back', rack_in_halls_path %>

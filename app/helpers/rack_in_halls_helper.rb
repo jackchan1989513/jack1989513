@@ -1,0 +1,2 @@
+module RackInHallsHelper
+end

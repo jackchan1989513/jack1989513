@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vendor_list.Name %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @vendor_list.Tel %>
+</p>
+
+<p>
+  <strong>Worktime:</strong>
+  <%= @vendor_list.WorkTime %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @vendor_list.Type %>
+</p>
+
+<%= link_to 'Edit', edit_vendor_list_path(@vendor_list) %> |
+<%= link_to 'Back', vendor_lists_path %>
